@@ -19,7 +19,8 @@ import { SumarNumerosComponent } from '../components/sumarnumeroscomponent/sumar
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

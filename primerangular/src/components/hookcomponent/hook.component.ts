@@ -32,7 +32,7 @@ export class HookComponent implements OnInit {
     ngDoCheck(): void{
         console.log("DoCheck: Me ejecuto al cambiar el render");
     }
-    
+
     cambiarMensaje(): void {
         this.mensaje = "Y mañana es Martes!"
     }
