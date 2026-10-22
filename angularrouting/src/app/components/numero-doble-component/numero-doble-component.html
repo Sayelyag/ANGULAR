@@ -1,0 +1,78 @@
+<h1 style="color: #005187;">Doble parametros</h1>
+
+@for (item of [].constructor(3); track $index) {
+    <a [routerLink]="['/numero-doble', $index + 5]">
+        Doble {{$index + 5}}
+    </a>
+    <br/>
+}
+<br/>
+<button (click)="goToHome()"
+style =
+  "background-color: #84b6f4;
+  color: #feffff;
+  border: 1px solid #005187;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;"
+  >
+  Ir a home
+</button>
+<br/>
+<button (click)="redirect(88)"
+style =
+  "background-color: #84b6f4;
+  margin-top: 10px;
+  color: #feffff;
+  border: 1px solid #005187;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;"
+>
+  Doble 88
+</button>
+<br/>
+<button (click)="redirect(99)" style =
+  "background-color: #84b6f4;
+  margin-top: 10px;
+  color: #feffff;
+  border: 1px solid #005187;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;"
+>
+  Doble 99
+</button>
+<br/>
+<button (click)="redirect(971)" style =
+  "background-color: #84b6f4;
+  margin-top: 10px;
+  color: #feffff;
+  border: 1px solid #005187;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;"
+>
+  Doble 971
+</button>
+@if (numero !== undefined){
+<h2 style="color: #020353">
+  El doble del numero {{numero}} es {{doble}}
+</h2>
+}@else{
+<h2 style="color:#020353">
+  No hemos recibido parametro
+</h2>
+}

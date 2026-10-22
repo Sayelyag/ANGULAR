@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NotFounfComponent } from './not-founf-component';
+import { MenuComponent } from './menu-component';
 
-describe('NotFounfComponent', () => {
-  let component: NotFounfComponent;
-  let fixture: ComponentFixture<NotFounfComponent>;
+describe('MenuComponent', () => {
+  let component: MenuComponent;
+  let fixture: ComponentFixture<MenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [NotFounfComponent],
+      declarations: [MenuComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(NotFounfComponent);
+    fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

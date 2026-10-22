@@ -1,0 +1,14 @@
+<h1 style="color: #005187;">Tabla de multiplicar</h1>
+
+@if (numero !== undefined) {
+  <h2 style="color: #4d82be;">Tabla del {{ numero }}</h2>
+  <table style="border: 1px solid #005187; border-collapse: collapse; text-align: center; color: #feffff;">
+    @for (resultado of resultados; track $index) {
+      <tr>
+        <td style="border: 1px solid #005187; padding: 8px; text-align: center; color: #feffff;">{{ numero }} x {{ $index + 1 }} = {{ resultado }}</td>
+      </tr>
+    }
+  </table>
+} @else {
+  <h2 style="color: #020353">No hemos recibido un número válido</h2>
+}
