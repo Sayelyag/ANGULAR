@@ -1,0 +1,21 @@
+<h1 style="color: #005187; text-align: center;">Deporte Padre Component</h1>
+<img
+  src="https://brandnation.co.uk/wp-content/uploads/2025/05/padel-paddles-on-a-court-with-padel-balls.jpg"
+  style="
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;"
+/>
+<h2 style="color: #005187; text-align: center;">Deportes</h2>
+<ul>
+  @for (deporte of deporte; track deporte) {
+    <li>
+      <app-deporte-hijo-component
+      (SeleccionarFavoritoPadre)="seleccionarFavorito($any($event))"
+      [sport]="deporte" (mensajeHijo)="mensaje = $any($event)">
+      </app-deporte-hijo-component>
+    </li>
+  }
+</ul>

@@ -1,0 +1,13 @@
+<h1 style="color: #005187; text-align: center;">Padre Coches Component</h1>
+<img
+  src="https://static.cargurus.com/images/forsale/2026/02/19/09/38/2022_lamborghini_urus-pic-8146223629734342095-1024x768.jpeg"
+  style="
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;"
+/>
+@for (coche of arrayCoches; track coche) {
+  <app-hijo-coches-component [car]="coche"></app-hijo-coches-component>
+}

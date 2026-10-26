@@ -1,0 +1,31 @@
+<h1 style="color: #4d82be" >{{car.marca}} {{car.modelo}}</h1>
+
+<h2 [class.azulb]="car.velocidad == 0"
+    [class.azulg]="car.velocidad > 0">
+  Velocidad: {{car.velocidad}} km/h
+</h2>
+
+<button (click)="acelerarCoche()"
+style="
+  background-color: #005187;
+  margin-right: 8px;
+  color: #feffff;
+  border: 1px solid #005187;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+">Acelerar</button>
+<button (click)="frenarCoche()" style="
+  background-color: #005187;
+  color: #c4dafa;
+  border: 1px solid #005187;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+">Frenar</button>
