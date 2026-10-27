@@ -1,0 +1,16 @@
+<table class="table table-bordered" style="margin: 0 auto; width: 800px;">
+    <thead>
+        <tr>
+            <th style="background-color: #4d82be; text-align: center;">Numero</th>
+            <th style="background-color: #4d82be; text-align: center;">Nombre</th>
+            <th style="background-color: #4d82be; text-align: center;">Localidad</th>
+        </tr>
+    </thead>
+    @for (dept of departamentos; track dept){
+        <tr>
+            <td style="background-color: #4d82be; text-align: center;">{{dept.numero}}</td>
+            <td style="background-color: #4d82be; text-align: center;">{{dept.nombre}}</td>
+            <td style="background-color: #4d82be; text-align: center;">{{dept.localidad}}</td>
+        </tr>
+    }
+</table>
