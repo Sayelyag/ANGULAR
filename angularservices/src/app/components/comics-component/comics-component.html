@@ -1,0 +1,8 @@
+<h1 style="color: #005187;">Service Comics JSON</h1>
+
+@for (comic of arrayComics; track comic) {
+  <h4 style="color: #005187;">{{ comic.titulo }}</h4>
+  <p style="color: #4d82be;">{{ comic.descripcion }}</p>
+  <img src="{{comic.imagen}}" style="width:80px; height: 100px;"/>
+}
+<hr/>

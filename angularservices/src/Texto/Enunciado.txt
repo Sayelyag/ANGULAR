@@ -1,0 +1,12 @@
+Crearemos un component llamado plantillafuncionsimplecomponent
+
+
+
+
+Creamos un model, un service llamado service.plantillas.ts
+
+Al iniciar la aplicación, cargamos las funciones en un select.
+
+Al buscar con el botón, mostramos los datos de la plantilla de dicha función.
+get: api/Plantilla/Funciones
+get: api/Plantilla/PlantillaFuncion/{funcion}

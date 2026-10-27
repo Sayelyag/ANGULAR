@@ -1,0 +1,13 @@
+<h1 style="color: #005187;">Coches API</h1>
+@for (car of arrayCoches; track car) {
+  <div>
+
+    <img [src]="car.imagen" [alt]="car.marca + ' ' + car.modelo"
+      style="width: 130px; height: 130px; object-fit: cover;"/>
+    <h5 style="color: #4d82be">Id: {{ car.idcoche }}</h5>
+    <h5 style="color: #4d82be">Conductor: {{ car.conductor }}</h5>
+    <h5 style="color: #4d82be">Marca: {{ car.marca }}</h5>
+    <h5 style="color: #4d82be">Modelo: {{ car.modelo }}</h5>
+    <hr style="border: 1px solid #005187; margin: 16px 0;"/>
+  </div>
+}

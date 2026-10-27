@@ -1,19 +1,9 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
+import { NgModule } from '@angular/core';
+import { PlantillaFuncionSimpleApiComponent } from './components/plantilla-funcion-simple-api-component/plantilla-funcion-simple-api-component';
+import { PlantillaFuncionMultipleComponent } from './components/plantilla-funcion-multiple-component/plantilla-funcion-multiple-component';
 
 @NgModule({
-  declarations: [
-    App
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-  ],
-  bootstrap: [App]
+  declarations: [PlantillaFuncionSimpleApiComponent, PlantillaFuncionMultipleComponent],
+  exports: [PlantillaFuncionSimpleApiComponent],
 })
-export class AppModule { }
+export class AppModule {}

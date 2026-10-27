@@ -1,0 +1,28 @@
+<h1 style="color: #005187;">Plantilla API</h1>
+<form>
+    <label>Seleccione una función</label>
+    <select name="selectfuncion" #selectfuncion class="form-control">
+        @for (fun of funciones; track fun){
+            <option>{{fun}}</option>
+        }
+    </select>
+    <button (click)="mostrarPlantilla()">Mostrar plantilla</button>
+</form>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th style="background-color: #4d82be">Apellido</th>
+            <th style="background-color: #4d82be">Funcion</th>
+            <th style="background-color: #4d82be">Turno</th>
+            <th style="background-color: #4d82be">Salario</th>
+        </tr>
+    </thead>
+    @for (person of personas; track person){
+        <tr>
+            <td style="background-color: #4d82be">{{person.apellido}}</td>
+            <td style="background-color: #4d82be">{{person.funcion}}</td>
+            <td style="background-color: #4d82be">{{person.turno}}</td>
+            <td style="background-color: #4d82be">{{person.salario}}</td>
+        </tr>
+    }
+</table>
