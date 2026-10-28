@@ -1,0 +1,17 @@
+<h1 style="color: #005187;">Comics Excel</h1>
+<button (click)="cargarComics()">
+  Cargar comics
+</button>
+
+@for (comic of arrayComics; track comic) {
+  <h4 style="color: #005187; text-align: center;">{{ comic.titulo }}</h4>
+  <img
+    src="{{ comic.imagen }}"
+    style="
+      margin: 20px auto 0 auto;
+      width: 150px;
+      height: auto;
+      border-radius: 8px;"
+  />
+  <p style="color: #4d82be;">{{ comic.descripcion }}</p>
+}

@@ -4,19 +4,26 @@ import { firstValueFrom, Observable } from "rxjs";
 import { environment } from "../../environments/environment.development";
 import { Plantilla } from "../models/plantilla";
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ServicePlantilla {
-    constructor(private _http: HttpClient){}
+  constructor(private _http: HttpClient){}
 
-    getFuncionesPlantilla(): Observable<any> {
-        let url = environment.urlApiPlantillas;
-        let request = "api/plantilla/funciones"
-        return this._http.get(url + request);
-    }
+  getFuncionesPlantilla(): Observable<string[]> {
+      const url = environment.urlApiPlantillas;
+      const request = "api/plantilla/funciones";
+      return this._http.get<string[]>(url + request);
+  }
 
-    async getPlantillaByFuncionAsync(funcion: string): Promise<Plantilla[]> {
-        let url = environment.urlApiPlantillas;
-        let request = "api/plantilla/plantillafuncion/" + funcion;
-        return firstValueFrom(this._http.get<Plantilla[]>(url + request));
-    }
+  async getPlantillaByFuncionAsync(funcion: string): Promise<Plantilla[]> {
+      const url = environment.urlApiPlantillas;
+      const request = "api/plantilla/plantillafuncion/" + encodeURIComponent(funcion);
+      return firstValueFrom(this._http.get<Plantilla[]>(url + request));
+  }
+
+  async getPlantillaFunciones(funciones: Array<string>): Promise<Plantilla[]> {
+    const resultados = await Promise.all(
+      funciones.map((funcion) => this.getPlantillaByFuncionAsync(funcion)),
+    );
+    return resultados.flat();
+  }
 }

@@ -1,0 +1,17 @@
+PRACTICA TABLA MULTIPLICAR
+Realizar un component llamado TablaMultiplicarComponent donde pediremos un número al
+Usuario y mostraremos la tabla de multiplicar de dicho número.
+Primero lo haremos con solo el resultado y cuando lo tengamos, quiero ver una tabla
+Con la Operación y el Resultado.
+Versión 1:
+5
+10
+15
+50
+Versión 2:
+5*1 = 5
+5 * 2 = 10
+5 * 3 = 15
+Ahora mismo, quiero dos prácticas:
+Con ElementRef
+Con Model Binding

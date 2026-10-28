@@ -1,8 +1,175 @@
-<table class="table table-bordered" style="margin: 0 auto; width: 800px;">
-    <th style="background-color: #4d82be; text-align: center;">Id Departamento</th>
-    <input type="number" name="cajaid" #cajaid class="form-control"/>
-    <th style="background-color: #4d82be; text-align: center;">Nombre</th>
-    <input type="number" name="cajanombre" #cajaid class="form-control"/>
-    <th style="background-color: #4d82be; text-align: center;">Localidad</th>
-    <input type="number" name="cajalocalidad" #cajaid class="form-control"/>
+<table class="table table-bordered" style="
+  margin: 0 auto 35px;
+  width: 1000px;
+  max-width: 95%;
+  border: 1px solid #84b6f4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(0, 81, 135, 0.12);
+  background-color: #feffff;
+">
+    <thead>
+        <tr>
+            <th style="
+              background-color: #005187;
+              color: #feffff;
+              text-align: center;
+              vertical-align: middle;
+              padding: 16px;
+              font-weight: 600;
+              border-color: #84b6f4;
+            ">Numero</th>
+            <th style="
+              background-color: #005187;
+              color: #feffff;
+              text-align: center;
+              vertical-align: middle;
+              padding: 16px;
+              font-weight: 600;
+              border-color: #84b6f4;
+            ">Nombre</th>
+            <th style="
+              background-color: #005187;
+              color: #feffff;
+              text-align: center;
+              vertical-align: middle;
+              padding: 16px;
+              font-weight: 600;
+              border-color: #84b6f4;
+            ">Localidad</th>
+            <th style="
+              background-color: #005187;
+              color: #feffff;
+              text-align: center;
+              vertical-align: middle;
+              padding: 16px;
+              font-weight: 600;
+              border-color: #84b6f4;
+            ">Detalles</th>
+            <th style="
+              background-color: #005187;
+              color: #feffff;
+              text-align: center;
+              vertical-align: middle;
+              padding: 16px;
+              font-weight: 600;
+              border-color: #84b6f4;
+            ">Editar</th>
+            <th style="
+              background-color: #005187;
+              color: #feffff;
+              text-align: center;
+              vertical-align: middle;
+              padding: 16px;
+              font-weight: 600;
+              border-color: #84b6f4;
+            ">Eliminar</th>
+        </tr>
+    </thead>
+
+    @for (dept of departamentos; track dept){
+        <tr>
+            <td style="
+              background-color: #feffff;
+              color: #005187;
+              text-align: center;
+              vertical-align: middle;
+              padding: 14px;
+              border-color: #c4dafa;
+              font-weight: 500;
+            ">{{dept.numero}}</td>
+
+            <td style="
+              background-color: #feffff;
+              color: #005187;
+              text-align: center;
+              vertical-align: middle;
+              padding: 14px;
+              border-color: #c4dafa;
+              font-weight: 500;
+            ">{{dept.nombre}}</td>
+
+            <td style="
+              background-color: #feffff;
+              color: #005187;
+              text-align: center;
+              vertical-align: middle;
+              padding: 14px;
+              border-color: #c4dafa;
+              font-weight: 500;
+            ">{{dept.localidad}}</td>
+
+            <td style="
+              background-color: #feffff;
+              color: #005187;
+              text-align: center;
+              vertical-align: middle;
+              padding: 14px;
+              border-color: #c4dafa;
+              font-weight: 500;
+            ">
+              <button [routerLink] = "['/details', dept.numero, dept.nombre, dept.localidad]"
+              style="
+                background-color: #4d82be;
+                margin-right: 8px;
+                color: #feffff;
+                border: 1px solid #4d82be;
+                border-radius: 4px;
+                padding: 8px 16px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s ease, color 0.2s ease;
+              ">Detalles</button>
+            </td>
+
+            <td style="
+              background-color: #feffff;
+              color: #005187;
+              text-align: center;
+              vertical-align: middle;
+              padding: 14px;
+              border-color: #c4dafa;
+              font-weight: 500;
+            ">
+              <button [routerLink] = "['/update', dept.numero]"
+              style="
+                background-color: #4d82be;
+                margin-right: 8px;
+                color: #feffff;
+                border: 1px solid #4d82be;
+                border-radius: 4px;
+                padding: 8px 16px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s ease, color 0.2s ease;
+              ">Editar</button>
+            </td>
+             <td style="
+              background-color: #feffff;
+              color: #005187;
+              text-align: center;
+              vertical-align: middle;
+              padding: 14px;
+              border-color: #c4dafa;
+              font-weight: 500;
+            ">
+              <button [routerLink] = "['/delete', dept.numero]"
+              style="
+                background-color: #4d82be;
+                margin-right: 8px;
+                color: #feffff;
+                border: 1px solid #4d82be;
+                border-radius: 4px;
+                padding: 8px 16px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.2s ease, color 0.2s ease;
+              "
+              (click)="deleteDepartamento(dept.numero)">Eliminar</button>
+            </td>
+        </tr>
+    }
 </table>

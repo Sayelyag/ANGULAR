@@ -6,6 +6,7 @@ import { ComicsComponent } from './app/components/comics-component/comics-compon
 import { PersonasApiComponent } from './app/components/personas-api-component/personas-api-component';
 import { CochesApiComponent } from './app/components/coches-api-component/coches-api-component';
 import { PlantillaFuncionSimpleApiComponent } from './app/components/plantilla-funcion-simple-api-component/plantilla-funcion-simple-api-component';
+import { PlantillaFuncionMultipleComponent } from './app/components/plantilla-funcion-multiple-component/plantilla-funcion-multiple-component';
 
 const routes: Routes = [
   { path: '', component: PersonasApiComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'personas', component: PersonasApiComponent },
   { path: 'coches', component: CochesApiComponent },
   { path: 'plantilla', component: PlantillaFuncionSimpleApiComponent },
+  { path: 'plantillamultiple', component: PlantillaFuncionMultipleComponent },
 ];
 
 bootstrapApplication(App, {

@@ -20,9 +20,29 @@ export class ServiceDepartamento {
     let header = new HttpHeaders();
 
     header = header.set('Content-Type', 'application/json');
+    console.log("JSON enviado al backend: " + json);
     let request = "api/departamentos";
     return firstValueFrom(
-      this._http.post(this.url + request, json, { headers: header})
+      this._http.post<Departamento>(environment.apiDepartamentos + request, json, { headers: header})
     );
+  }
+
+  async findDepartamentoAsync(id: number): Promise<Departamento> {
+    let request = "api/departamentos/" + id;
+    return firstValueFrom(this._http.get<Departamento>(environment.apiDepartamentos + request));
+  }
+
+  async updateDepartamentoAsync(departamento: Departamento): Promise<any> {
+    let json = JSON.stringify(departamento);
+    let header = new HttpHeaders().set("Content-Type", "application/json");
+    let request = "api/departamentos/";
+    return firstValueFrom(
+      this._http.put(environment.apiDepartamentos + request, json, { headers: header })
+    );
+  }
+
+  async deleteDepartamentoAsync(id: number): Promise<void> {
+    let request = "api/departamentos/" + id;
+    return firstValueFrom(this._http.delete<void>(environment.apiDepartamentos + request));
   }
 }

@@ -1,13 +1,17 @@
-<h1 style="color: #005187;">Plantilla API</h1>
-<form>
-    <label>Seleccione una función</label>
-    <select name="selectfuncion" #selectfuncion class="form-control">
+<h1 style="color: #005187;">Plantilla API múltiple</h1>
+<form (submit)="$event.preventDefault(); mostrarPlantilla()">
+    <label for="selectfunciones">Seleccione una o varias funciones</label>
+    <select id="selectfunciones" name="selectfunciones" class="form-control" multiple
+        [(ngModel)]="funcionesSeleccionadas">
         @for (fun of funciones; track fun){
-            <option>{{fun}}</option>
+            <option [value]="fun">{{fun}}</option>
         }
     </select>
-    <button (click)="mostrarPlantilla()">Mostrar plantilla</button>
+    <button type="submit">Mostrar plantilla</button>
 </form>
+@if (error) {
+    <p style="color: #b00020;">{{ error }}</p>
+}
 <table class="table table-bordered">
     <thead>
         <tr>

@@ -1,0 +1,28 @@
+<h1 style="color: #005187; text-align: center;">Padre Numeros Component</h1>
+<img
+  src="https://media.istockphoto.com/id/178895760/photo/an-abstract-blue-pattern-with-numbers.jpg?s=612x612&w=0&k=20&c=1ln1nhLfTB9w3EFGEXVRS7BG9S1rCK6RrrMpR_kXmrM="
+  style="
+    display: block;
+    margin: 20px auto 0 auto;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;"
+/>
+<h3 style="color: #4d82be;">
+  La suma es: {{ suma }}
+</h3>
+<h2 style="color: #005187; text-align: center;">numeros</h2>
+<ul>
+  @for (numero of numeros; track $index) {
+  <li>
+    <app-hijo-numeros-component
+      [numero]="numero"
+      (seleccionarFavoritoPadre)="sumarNumero($event)">
+    </app-hijo-numeros-component>
+  </li>
+  }
+</ul>
+
+<button (click)="generarNumero()">
+  Crear número aleatorio
+</button>

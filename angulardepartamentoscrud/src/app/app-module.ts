@@ -6,9 +6,20 @@ import { HomeComponent } from './components/home-component/home-component';
 import { MenuComponent } from './components/menu-component/menu-component';
 import { ServiceDepartamento } from './services/service.departamento';
 import { CreateComponent } from './components/create-component/create-component';
+import { DetailsComponent } from './components/details-component/details-component';
+import { UpdateComponent } from './components/update-component/update-component';
+import { DeleteComponent } from './components/delete-component/delete-component';
 
 @NgModule({
-  declarations: [App, HomeComponent, MenuComponent, CreateComponent],
+  declarations: [
+    App,
+    HomeComponent,
+    MenuComponent,
+    CreateComponent,
+    DetailsComponent,
+    UpdateComponent,
+    DeleteComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [ServiceDepartamento, provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

@@ -1,13 +1,17 @@
 <h1 style="color: #005187;">Plantilla API</h1>
 <form>
     <label>Seleccione una función</label>
-    <select name="selectfuncion" #selectfuncion class="form-control">
+    <select name="selectfuncion" class="form-control" [(ngModel)]="funcionSeleccionada">
+        <option value="">Selecciona una función</option>
         @for (fun of funciones; track fun){
-            <option>{{fun}}</option>
+            <option [value]="fun">{{fun}}</option>
         }
     </select>
-    <button (click)="mostrarPlantilla()">Mostrar plantilla</button>
+    <button type="button" (click)="mostrarPlantilla()">Mostrar plantilla</button>
 </form>
+@if (error) {
+    <p style="color: #b00020;">{{ error }}</p>
+}
 <table class="table table-bordered">
     <thead>
         <tr>

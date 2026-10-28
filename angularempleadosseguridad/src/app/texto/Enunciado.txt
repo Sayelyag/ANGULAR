@@ -1,0 +1,39 @@
+El token que nos devolverá una petición OAuth, debemos guardarlo en Angular en algún lugar.
+
+
+
+Tenemos tres formas:
+
+
+
+Global.  Podemos escribir en una variable y utilizarla.
+
+Local Storage: Esto almacena en el explorador Web el valor que deseemos y podemos recuperarlo
+
+Cuando deseemos en cualquier lugar
+
+Session Storage: Almacena en el servidor la información y podemos recuperarla cuando la
+
+Necesitemos.
+
+
+
+Vamos a crear una aplicación llamada angularempleadosseguridad
+
+
+
+Tendremos los siguientes elementos:
+
+
+
+Necesito un component de Login
+
+Necesito un component para ver mi Perfil
+
+Necesito un component para ver mis subordinados.
+
+
+
+Versión 2: Si intentamos entrar en perfil sin Token, no podremos y nos vamos a Login.
+
+Lo mismo para Subordinados.

@@ -13,7 +13,7 @@ describe('PlantillaFuncionSimpleApiComponent', () => {
       providers: [
         {
           provide: ServicePlantilla,
-          useValue: { getPlantillas: () => of([]) },
+          useValue: { getFuncionesPlantilla: () => of([]) },
         },
       ],
     }).compileComponents();

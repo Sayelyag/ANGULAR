@@ -1,0 +1,72 @@
+<h1 style="
+  color: #005187;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 30px 0 25px;
+  letter-spacing: 0.5px;
+">
+  Detalles del Departamento
+</h1>
+
+<p style="
+  text-align: center;
+  margin-bottom: 30px;
+">
+  <a [routerLink] = "['/home']" style="
+    display: inline-block;
+    background-color: #005187;
+    color: #feffff;
+    text-decoration: none;
+    padding: 10px 22px;
+    border: 1px solid #005187;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 81, 135, 0.18);
+  ">
+    Back to index
+  </a>
+</p>
+
+@if (departamento) {
+  <ul class = "list-group" style="
+    width: 700px;
+    max-width: 95%;
+    margin: 0 auto 35px;
+    border: 1px solid #84b6f4;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0, 81, 135, 0.12);
+  ">
+    <li class = "list-group-item" style="
+      background-color: #005187;
+      color: #feffff;
+      padding: 18px 22px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-color: #84b6f4;
+    ">
+      Id Departamento: {{departamento.numero}}
+    </li>
+
+    <li class = "list-group-item" style="
+      background-color: #feffff;
+      color: #005187;
+      padding: 18px 22px;
+      font-size: 1.05rem;
+      border-color: #c4dafa;
+    ">
+      Nombre: {{departamento.nombre}}
+    </li>
+
+    <li class = "list-group-item" style="
+      background-color: #feffff;
+      color: #005187;
+      padding: 18px 22px;
+      font-size: 1.05rem;
+      border-color: #c4dafa;
+    ">
+      Localidad: {{departamento.localidad}}
+    </li>
+  </ul>
+}
