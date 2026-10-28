@@ -1,1 +1,30 @@
-<p>subordinados works!</p>
+@if (errorMessage) {
+  <p class="alert alert-warning">{{ errorMessage }}</p>
+} @else {
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Apellido</th>
+      <th>Oficio</th>
+      <th>Salario</th>
+      <th>Director</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (empleado of subordinados; track empleado.idEmpleado) {
+      <tr>
+        <td>{{ empleado.idEmpleado }}</td>
+        <td>{{ empleado.apellido }}</td>
+        <td>{{ empleado.oficio }}</td>
+        <td>{{ empleado.salario }}</td>
+        <td>{{ empleado.director }}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="5">No hay subordinados disponibles.</td>
+      </tr>
+    }
+  </tbody>
+</table>
+}

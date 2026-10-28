@@ -5,9 +5,11 @@ import { Perfil } from './components/perfil/perfil';
 import { Subordinados } from './components/subordinados/subordinados';
 
 const routes: Routes = [
+  {path: "", redirectTo: "home", pathMatch: "full"},
   {path: "home", component: HomeComponent},
   {path: "perfil", component: Perfil},
   {path: "subordinados", component: Subordinados},
+  {path: "**", redirectTo: "home"},
 ];
 
 @NgModule({

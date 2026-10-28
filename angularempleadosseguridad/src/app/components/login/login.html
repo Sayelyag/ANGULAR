@@ -1,1 +1,29 @@
-<p>login works!</p>
+<h2>Iniciar sesión</h2>
+
+<form (ngSubmit)="login()">
+  <label>
+    Usuario:
+    <input
+      type="text"
+      [(ngModel)]="username"
+      name="username"
+      required
+    />
+  </label>
+
+  <label>
+    Contraseña:
+    <input
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
+  </label>
+
+  <button type="submit">Entrar</button>
+
+  @if (errorMessage) {
+    <p>{{ errorMessage }}</p>
+  }
+</form>
